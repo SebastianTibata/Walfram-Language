@@ -1,0 +1,3 @@
+cos[x_,n_]:= Sum[(-1)^k * x^(2*k)/factorial[2*k],{k,0,n}]
+aproximacion = cos[0.5,5]
+Print[StringTemplate["El coseno de `1` es `2` "][0.5,aproximacion]]
