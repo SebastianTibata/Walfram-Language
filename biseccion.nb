@@ -1,0 +1,18 @@
+biseccion[f_,a_,b_,tol_]:=Module[{m,fa,fb,fm},fa=f[a];fb=f[b];
+
+If[fa==0,Return[a]];
+
+If[fb==0,Return[b]];
+
+If[fa*fb>0,Return["Error: No hay cambio de signo en el intervalo"]]
+
+While[Abs[b-a]>tol;m=(a+b)/2;
+  fm=f[m];
+  If[fm==0,Return[m]];
+  If[fa*fm<0,b=m;
+    fb=fm,a=m;
+    fa=fm];];
+Return[(a+b)/2];]
+f[x_]:=x^2-2
+raiz=biseccion[f,1,2,0.001]
+Print[StringTemplate["La raiz es `1`"][raiz]]
