@@ -1,0 +1,4 @@
+MCD[a_,b_]:=If[b==0,a,MCD[b,Mod[a,b]]]
+a=12
+b=8
+Print[StringTemplate["El MCD de  `1` y `2` es: `3` "][a,b,MCD[a,b]]]
