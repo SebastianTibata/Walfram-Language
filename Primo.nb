@@ -1,0 +1,3 @@
+EsPrimo[n_]:=If[n<2,False,AllTrue[Range[2,Floor[Sqrt[n]]],Mod[n,#]!=0&]];\[IndentingNewLine]
+ImprimirSiPrimo[n_]:=If[EsPrimo[n],Print[StringTemplate["El numero `1` es primo."][n]],Print[StringTemplate["El numero `1` no es primo."][n]]];\[IndentingNewLine]
+ImprimirSiPrimo[5] \[IndentingNewLine]
